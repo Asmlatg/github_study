@@ -242,6 +242,90 @@ void ImGui::StyleColorsDark(ImGuiStyle* dst)
     colors[ImGuiCol_ModalWindowDimBg]       = ImVec4(0.80f, 0.80f, 0.80f, 0.35f);
 }
 
+void ImGui::StyleColorsGlassUI(ImGuiStyle* dst) {
+    ImGuiStyle* style = dst ? dst : &ImGui::GetStyle();
+    ImVec4* colors = style->Colors;
+
+    ImVec4 transparent = ImVec4(1.00f, 1.00f, 1.00f, 0.50f); // Blanc avec 50% de transparence
+    ImVec4 white = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+    ImVec4 lightGray = ImVec4(0.90f, 0.90f, 0.90f, 0.50f);
+
+    colors[ImGuiCol_Text]                   = ImVec4(0.00f, 0.00f, 0.00f, 1.00f);
+    colors[ImGuiCol_TextDisabled]           = ImVec4(0.60f, 0.60f, 0.60f, 1.00f);
+    colors[ImGuiCol_WindowBg]               = transparent;
+    colors[ImGuiCol_ChildBg]                = transparent;
+    colors[ImGuiCol_PopupBg]                = transparent;
+    colors[ImGuiCol_Border]                 = lightGray;
+    colors[ImGuiCol_BorderShadow]           = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
+    colors[ImGuiCol_FrameBg]                = transparent;
+    colors[ImGuiCol_FrameBgHovered]         = lightGray;
+    colors[ImGuiCol_FrameBgActive]          = white;
+    colors[ImGuiCol_TitleBg]                = transparent;
+    colors[ImGuiCol_TitleBgActive]          = lightGray;
+    colors[ImGuiCol_TitleBgCollapsed]       = transparent;
+    colors[ImGuiCol_MenuBarBg]              = transparent;
+    colors[ImGuiCol_ScrollbarBg]            = transparent;
+    colors[ImGuiCol_ScrollbarGrab]          = lightGray;
+    colors[ImGuiCol_ScrollbarGrabHovered]   = white;
+    colors[ImGuiCol_ScrollbarGrabActive]    = white;
+    colors[ImGuiCol_CheckMark]              = white;
+    colors[ImGuiCol_SliderGrab]             = lightGray;
+    colors[ImGuiCol_SliderGrabActive]       = white;
+    colors[ImGuiCol_Button]                 = transparent;
+    colors[ImGuiCol_ButtonHovered]          = lightGray;
+    colors[ImGuiCol_ButtonActive]           = white;
+    colors[ImGuiCol_Header]                 = transparent;
+    colors[ImGuiCol_HeaderHovered]          = lightGray;
+    colors[ImGuiCol_HeaderActive]           = white;
+    colors[ImGuiCol_Separator]              = lightGray;
+    colors[ImGuiCol_SeparatorHovered]       = white;
+    colors[ImGuiCol_SeparatorActive]        = white;
+    colors[ImGuiCol_ResizeGrip]             = transparent;
+    colors[ImGuiCol_ResizeGripHovered]      = lightGray;
+    colors[ImGuiCol_ResizeGripActive]       = white;
+    colors[ImGuiCol_Tab]                    = transparent;
+    colors[ImGuiCol_TabHovered]             = lightGray;
+    colors[ImGuiCol_TabActive]              = white;
+    colors[ImGuiCol_TabUnfocused]           = transparent;
+    colors[ImGuiCol_TabUnfocusedActive]     = lightGray;
+    colors[ImGuiCol_DockingPreview]         = lightGray;
+    colors[ImGuiCol_DockingEmptyBg]         = transparent;
+    colors[ImGuiCol_PlotLines]              = white;
+    colors[ImGuiCol_PlotLinesHovered]       = white;
+    colors[ImGuiCol_PlotHistogram]          = white;
+    colors[ImGuiCol_PlotHistogramHovered]   = white;
+    colors[ImGuiCol_TextSelectedBg]         = lightGray;
+    colors[ImGuiCol_DragDropTarget]         = white;
+    colors[ImGuiCol_NavHighlight]           = transparent;
+    colors[ImGuiCol_NavWindowingHighlight]  = white;
+    colors[ImGuiCol_NavWindowingDimBg]      = transparent;
+    colors[ImGuiCol_ModalWindowDimBg]       = transparent;
+
+    style->WindowRounding = 12.0f;
+    style->ChildRounding = 12.0f;
+    style->FrameRounding = 12.0f;
+    style->PopupRounding = 12.0f;
+    style->ScrollbarRounding = 12.0f;
+    style->GrabRounding = 12.0f;
+    style->TabRounding = 12.0f;
+
+    style->WindowPadding = ImVec2(15, 15);
+    style->FramePadding = ImVec2(10, 10);
+    style->ItemSpacing = ImVec2(12, 8);
+    style->ItemInnerSpacing = ImVec2(8, 6);
+    style->TouchExtraPadding = ImVec2(0, 0);
+    style->IndentSpacing = 25.0f;
+    style->ScrollbarSize = 15.0f;
+    style->GrabMinSize = 20.0f;
+
+    style->WindowBorderSize = 0.0f;
+    style->ChildBorderSize = 0.0f;
+    style->PopupBorderSize = 0.0f;
+    style->FrameBorderSize = 0.0f;
+    style->TabBorderSize = 0.0f;
+}
+
+
 void ImGui::StyleColorsClassic(ImGuiStyle* dst)
 {
     ImGuiStyle* style = dst ? dst : &ImGui::GetStyle();

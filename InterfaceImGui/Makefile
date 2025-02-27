@@ -45,10 +45,10 @@ endif
 ifeq ($(UNAME_S), Darwin) #APPLE
 	ECHO_MESSAGE = "Mac OS X"
 	LIBS += -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo `sdl2-config --libs`
-	LIBS += -L/usr/local/lib -L/opt/local/lib
+	LIBS += -L/usr/homebrew/lib -L/opt/homebrew/lib
 
 	CXXFLAGS += `sdl2-config --cflags`
-	CXXFLAGS += -I/usr/local/include -I/opt/local/include
+	CXXFLAGS += -I/usr/homebrew/include -I/opt/homebrew/include
 	CFLAGS = $(CXXFLAGS)
 endif
 
